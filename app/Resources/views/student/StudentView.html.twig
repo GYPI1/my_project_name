@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %}Voir la list{% endblock %}
+ {% block body %}
+     <ul>
+
+         <table class="table table-striped">
+           <thead>
+             <tr>
+             <th>firstname</th>
+             <th>lastName</th>
+             <th>numEtud</th>
+             <th>Action</th>
+             </tr> </thead>
+             {% for student in students %}
+            <tbody> <tr>
+                 <td>{{ student.firstname }}</td>
+                 <td>{{ student.lastName }}</td>
+                <td> {{ student.numEtud }} </td>
+               <td><a href="{{ path('delete_studient', {'id': student.id}) }}"class="btn btn-danger" >Supprimer</a>
+                   <a href="{{ path('edit_studient', {'id': student.id}) }}" class="btn btn-success">Modifier</a></td>
+            </tr></tbody>
+             {% endfor %}
+
+
+         </table>
+
+     </ul>
+ {% endblock %}

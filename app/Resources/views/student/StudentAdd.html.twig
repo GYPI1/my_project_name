@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block title %}Ajout{% endblock %}
+{% block head %}<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> {% endblock %}
+
+ {% block body %}
+  {{ form_start (form) }}
+  <div class="form-group">FirstName:
+      {{ form_widget(form.firstName, {attr: {placeholder: "Prenom"}}) }}
+      {{ form_errors(form.firstName) }}
+  </div>
+  <div class="form-group">LastName:
+      {{ form_widget(form.lastName, {attr: {placeholder: "Nom"}}) }}
+      {{ form_errors(form.lastName) }}
+  </div>
+  <div class="form-group">NumEtud:
+      {{ form_widget(form.numEtud, {attr: {placeholder: "Numero de téléphone"}}) }}
+      {{ form_errors(form.numEtud) }}
+  </div>
+
+ <button type="input" class="btn btn-primary">
+      valider
+ </button>
+  {{ form_end(form) }}
+ {% endblock %}
