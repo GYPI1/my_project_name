@@ -8,6 +8,17 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
+
+ /**
+     * @Route("/page", name="creation")
+     */
+
+    public function create() 
+
+    {   
+        return  $this->render('comments/comment.html.twig');
+
+    }
     /**
      * @Route("/", name="home")
      */
@@ -16,4 +27,6 @@ class DefaultController extends Controller
 
         return $this->render('default/index.html.twig');
     }
+
+   
 }
